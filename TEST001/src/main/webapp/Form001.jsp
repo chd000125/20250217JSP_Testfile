@@ -7,9 +7,12 @@
 <title>Insert title here</title>
 </head>
 	<body>
-		<form action="result.jsp">
-			<input type="text" name = "kor"/>
-			<input type="submit"   />
+	<h1>TESTPAGE</h1>
+		<form action="LoginPage.jsp">
+			<input type="submit" name = "login" value="로그인">
+		</form>
+		<form action="AddPage.jsp">
+			<input type="submit" name = "addPage" value="회원가입">
 		</form>
 	</body>
 </html>
