@@ -23,7 +23,8 @@ try(Connection conn = DriverManager.getConnection(URL, "root", "1234");
 	while(rs.next()) {
 %>
 <tr>
-<td><%=rs.getString("deptno") %></td><td><%=rs.getString("dname") %></td><td><%=rs.getString("loc") %></td>
+<td><a href="updFormDept.jsp?deptno=<%=rs.getString("deptno") %>"><%=rs.getString("deptno") %></a></td><td><%=rs.getString("dname") %></td><td><%=rs.getString("loc") %></td>
+<td><a href="deleteDept.jsp?deptno=<%=rs.getString("deptno") %>">삭제</a></td>
 <tr>
 <%
 	}
