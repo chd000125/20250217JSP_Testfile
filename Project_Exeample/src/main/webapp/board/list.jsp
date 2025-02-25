@@ -31,7 +31,7 @@
         <th class="regtime">작성일시</th>
         <th                >조회수  </th>
     </tr>
-<%
+<%	
     // 게시글 리스트 읽어오기
     Class.forName("com.mysql.cj.jdbc.Driver");
     try (
@@ -67,6 +67,6 @@
 
 <br>
 <input type="button" value="글쓰기" onclick="location.href='write.jsp'">
-
+<input type="button" value="돌아가기" onclick="location.href='../index.jsp'">
 </body>
 </html>

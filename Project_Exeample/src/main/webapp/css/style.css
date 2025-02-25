@@ -46,6 +46,12 @@ header .inner .util li a {
 	color: #999;
 	padding: 0px 10px;
 }
+header .login {
+	display: block;
+	font: 12px/1 "arial";
+	color: #999;
+	padding: 0px 10px;
+}
 header .inner #gnb {
 	position: absolute;
 	bottom: 0px;
