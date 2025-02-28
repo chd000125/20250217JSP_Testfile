@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/* 전체적인 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 배경색 및 폰트 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* header 스타일 */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* main content area 스타일 */
+.container {
+    width: 60%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* form 스타일 */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 반응형 웹 디자인 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header nav a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+}
