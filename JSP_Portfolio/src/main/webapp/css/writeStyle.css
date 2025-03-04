@@ -1,106 +1,71 @@
-@charset "UTF-8";
-
-/* 전체적인 스타일 초기화 */
-* {
+/* 전체 레이아웃 정리 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* 배경색 및 폰트 스타일 */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+/* 헤더 스타일 */
+h1 {
+    margin: 20px 0;
+    font-size: 24px;
     color: #333;
 }
 
-/* header 스타일 */
-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-header h1 {
-    margin-bottom: 10px;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* main content area 스타일 */
-.container {
-    width: 60%;
-    margin: 30px auto;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-/* form 스타일 */
+/* 폼 전체 컨테이너 */
 form {
-    display: flex;
-    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
+/* 라벨과 입력 요소 스타일 */
+label {
+    display: block;
+    margin-bottom: 12px;
     font-weight: bold;
-    margin-bottom: 8px;
-    display: inline-block;
-    font-size: 16px;
+    color: #555;
 }
 
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px;
+input[type="text"],
+input[type="number"],
+textarea {
+    width: calc(100% - 12px);
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
     font-size: 14px;
+    margin-top: 6px;
 }
 
-.form-group input:focus, .form-group textarea:focus {
-    border-color: #4CAF50;
-    outline: none;
+/* 텍스트영역 크기 */
+textarea {
+    resize: none;
+    height: 100px;
 }
 
 /* 버튼 스타일 */
 button {
-    padding: 12px 20px;
-    background-color: #4CAF50;
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
     color: white;
-    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #218838;
 }
 
-/* 반응형 웹 디자인 */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    header nav a {
-        font-size: 14px;
-        margin: 0 10px;
-    }
-}
+/* 반응형 (

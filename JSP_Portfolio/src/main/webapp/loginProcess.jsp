@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="DAO.userDAO, DTO.userDTO" %>
+<%@ page import="DTO.userDTO, DAO.userDAO" %>
 
 <%
-    if (request.getMethod().equals("POST")) {
-        // 입력값 가져오기
-        String userId = request.getParameter("userId");
-        String userPw = request.getParameter("userPw");
+request.setCharacterEncoding("UTF-8");
 
-        // DAO를 활용하여 로그인 처리
-        userDAO dao = new userDAO();
-        userDTO user = dao.login(userId, userPw);
+// 폼에서 전송된 데이터 받기
+String userId = request.getParameter("userId");
+String userPw = request.getParameter("userPw");
 
-        // 로그인 성공 여부 확인
-        if (user != null) {
-            session.setAttribute("user", user);
-            response.sendRedirect("boardList.jsp"); // 로그인 성공 시 게시판 목록 페이지로 이동
-        } else {
-            out.println("<script>alert('로그인 실패: 아이디 또는 비밀번호를 확인하세요.'); history.back();</script>");
-        }
-    }
+// DAO 생성 및 로그인 처리
+userDAO dao = new userDAO();
+userDTO user = dao.login(userId, userPw);
+
+if (user != null) {
+    // 로그인 성공 (세션에 정보 저장)
+    session.setAttribute("loginUser", user);
+    out.println("<script>alert('로그인 성공!'); location.href='index.jsp';</script>");
+} else {
+    // 로그인 실패
+    out.println("<script>alert('아이디 또는 비밀번호가 올바르지 않습니다.'); history.back();</script>");
+}
 %>

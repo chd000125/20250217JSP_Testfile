@@ -5,15 +5,13 @@ public class userDTO {
 	private String nickname;
 	private String userPw;
 	private String userEm;
-	private String loc;
 	
-	public userDTO(String userId, String nickname, String userPw, String userEm, String loc) {
+	public userDTO(String userId, String nickname, String userPw, String userEm) {
 		super();
 		this.userId = userId;
 		this.nickname = nickname;
 		this.userPw = userPw;
 		this.userEm = userEm;
-		this.loc = loc;
 	}
 
 	public String getUserId() { return userId; }
@@ -27,7 +25,4 @@ public class userDTO {
 
 	public String getUserEm() { return userEm; }
 	public void setUserEm(String userEm) { this.userEm = userEm; }
-
-	public String getLoc() { return loc; }
-	public void setLoc(String loc) { this.loc = loc; }  
 }

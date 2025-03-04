@@ -6,112 +6,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class boardDAO {
-    private Connection conn; // 데이터베이스 연결 객체
-
-    // 데이터베이스 연결 생성자
-    public boardDAO() {
+    private Connection getConnection() throws SQLException {
+        String url = "jdbc:mysql://localhost:3309/portfolio";
+        String user = "root";
+        String password = "1234";
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL JDBC 드라이버 로드
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/used_market", "root", "password");
-        } catch (Exception e) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return DriverManager.getConnection(url, user, password);
+    }
+
+    // 게시글 저장 (C)
+    public void saveBoard(boardDTO board) {
+        String sql = "INSERT INTO board (title, content, price, seller_id) VALUES (?, ?, ?, ?)";
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, board.getTitle());
+            pstmt.setString(2, board.getContent());
+            pstmt.setInt(3, board.getPrice());
+            pstmt.setString(4, board.getSellerId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // 게시글 목록 조회 (전체 게시글)
+    // 전체 게시글 조회 (R)
     public List<boardDTO> getAllBoards() {
-        List<boardDTO> boardList = new ArrayList<>();
-        String sql = "SELECT * FROM Board ORDER BY created_at DESC";
-        
-        try {
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            ResultSet rs = pstmt.executeQuery();
-            
+        List<boardDTO> list = new ArrayList<>();
+        String sql = "SELECT * FROM board ORDER BY created_at DESC";
+        try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
-                boardList.add(new boardDTO(
+                boardDTO board = new boardDTO(
                     rs.getInt("id"),
                     rs.getString("title"),
                     rs.getString("content"),
                     rs.getInt("price"),
-                    rs.getInt("seller_id")
-                ));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return boardList;
-    }
-
-    // 게시글 상세 조회 (ID로 조회)
-    public boardDTO getBoardById(int id) {
-        String sql = "SELECT * FROM Board WHERE id=?";
-        try {
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
-            ResultSet rs = pstmt.executeQuery();
-
-            if (rs.next()) {
-                return new boardDTO(
-                    rs.getInt("id"),
-                    rs.getString("title"),
-                    rs.getString("content"),
-                    rs.getInt("price"),
-                    rs.getInt("seller_id")
+                    rs.getString("seller_id"),
+                    rs.getTimestamp("created_at")
                 );
+                list.add(board);
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null; // 게시글을 찾을 수 없으면 null 반환
-    }
-
-    // 게시글 작성 (Insert)
-    public boolean createBoard(boardDTO board) {
-        String sql = "INSERT INTO Board (title, content, price, seller_id) VALUES (?, ?, ?, ?)";
-        try {
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, board.getTitle());
-            pstmt.setString(2, board.getContent());
-            pstmt.setInt(3, board.getPrice());
-            pstmt.setInt(4, board.getSellerId());
-            
-            int rowsInserted = pstmt.executeUpdate();
-            return rowsInserted > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    // 게시글 수정 (Update)
-    public boolean updateBoard(boardDTO board) {
-        String sql = "UPDATE Board SET title=?, content=?, price=? WHERE id=?";
-        try {
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, board.getTitle());
-            pstmt.setString(2, board.getContent());
-            pstmt.setInt(3, board.getPrice());
-            pstmt.setInt(4, board.getId());
-
-            int rowsUpdated = pstmt.executeUpdate();
-            return rowsUpdated > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    // 게시글 삭제 (Delete)
-    public boolean deleteBoard(int id) {
-        String sql = "DELETE FROM Board WHERE id=?";
-        try {
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
-            int rowsDeleted = pstmt.executeUpdate();
-            return rowsDeleted > 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
+        return list;
     }
 }
