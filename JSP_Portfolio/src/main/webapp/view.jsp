@@ -3,7 +3,7 @@
 <%
     int id = Integer.parseInt(request.getParameter("id"));
     boardDAO boardDAO = new boardDAO();
-    boardDTO board = boardDAO.getBoardById(id);
+    boardDTO board = boardDAO.getAllBoards(id);
 %>
 <!DOCTYPE html>
 <html>

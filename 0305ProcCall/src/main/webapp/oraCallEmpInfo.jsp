@@ -1,5 +1,5 @@
+<%@page import="java.sql.CallableStatement"%>
 <%@page import="java.sql.Types"%>
-<%@page import="com.mysql.cj.jdbc.CallableStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="javax.sql.DataSource"%>
 <%@page import="javax.naming.InitialContext"%>
