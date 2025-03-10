@@ -11,7 +11,7 @@ public class Assembler {
 	private ChangePasswordService pwdSvc;
 
 	public Assembler() {
-		memberDao = new MemberDao();
+		memberDao = new MemberDao(null);
 		regSvc = new MemberRegisterService(memberDao);
 		pwdSvc = new ChangePasswordService();
 		pwdSvc.setMemberDao(memberDao);

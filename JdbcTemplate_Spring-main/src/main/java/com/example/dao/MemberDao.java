@@ -1,34 +1,40 @@
-package chap03.spring;
+package com.example.dao;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
+
+import com.example.entity.Member;
 
 
 public class MemberDao {
 	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	private String string;
+	
+	private RowMapper<Member> memberRowMapper = (rs, rowNum) ->{
+		Member member = new Member(
+				rs.getString(0),
+				rs.getString(1),
+				rs.getString(2),
+				rs.getTimestamp(4).toLocalDateTime());
+		return null;
+	};
+	
 	
 	public MemberDao(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
+	public MemberDao() {}
+	
+	
+
 	public Member selectByEmail(String email) {
-	    String sql = "SELECT * FROM MEMBER WHERE email = ?";
-	    List<Member> result = jdbcTemplate.query(sql, 
-	        (rs, rowNum) -> new Member(
-	            rs.getString(1),  // email
-	            rs.getString(2),  // name
-	            rs.getString(3),  // 다른 필드 (예: 주소 등)
-	            rs.getTimestamp(4).toLocalDateTime()  // 날짜 필드
-	        ), 
-	        email); // 이메일을 ?에 바인딩
+	    String sql = "SELECT email FROM MEMBER WHERE id = ?";
+	    List<Member> result = jdbcTemplate.query(sql, memberRowMapper, email);
 
 	    return null;	
 	}

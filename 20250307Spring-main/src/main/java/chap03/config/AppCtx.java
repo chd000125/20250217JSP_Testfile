@@ -51,7 +51,7 @@ public class AppCtx {
 	}
 	@Bean
 	public MemberDao memberDao() {
-		return new MemberDao();
+		return new MemberDao(null);
 //		return new MemberDao(dataSource());
 	}
 }
