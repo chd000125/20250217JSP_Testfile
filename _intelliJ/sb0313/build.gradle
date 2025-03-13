@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation 'mysql:mysql-connector-java:8.0.33'  // MySQL 8.0.33 버전 명시
+
+    // Spring Boot Starter
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // JSP Support
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet:jstl'
+
+// https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'   // JdbcTemplate을 위한 의존성
+}
+
+test {
+    useJUnitPlatform()
+}
