@@ -1,0 +1,10 @@
+com\example\beanlifecycledemo\listeners\BeanLifecycleListener$ContextStartedListener.class
+com\example\beanlifecycledemo\listeners\BeanLifecycleListener$ContextClosedListener.class
+com\example\beanlifecycledemo\service\BeanLifecycleService.class
+com\example\beanlifecycledemo\BeanLifecycleDemoApplication.class
+com\example\beanlifecycledemo\config\BeanConfig.class
+com\example\beanlifecycledemo\config\WebConfig.class
+com\example\beanlifecycledemo\listeners\BeanLifecycleListener$ContextStoppedListener.class
+com\example\beanlifecycledemo\controller\BeanLifecycleController.class
+com\example\beanlifecycledemo\listeners\BeanLifecycleListener.class
+com\example\beanlifecycledemo\beans\MyBean.class
