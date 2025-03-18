@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    // Spring Boot Starter
+        // Spring Boot Starter
     implementation 'org.springframework.boot:spring-boot-starter-web'
     
     // JSP Support
