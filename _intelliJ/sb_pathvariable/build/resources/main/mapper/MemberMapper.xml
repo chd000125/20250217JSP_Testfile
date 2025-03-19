@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sbpathvariable.mapper.MemberMapper">
+    <select id="findAll" resultType="com.example.sbpathvariable.domain.Member">
+        SELECT * FROM member
+    </select>
+
+    <select id="findById" resultType="com.example.sbpathvariable.domain.Member">
+        SELECT * FROM member WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.example.sbpathvariable.domain.Member">
+        INSERT INTO member (name, email)
+        VALUES (#{name}, #{email})
+    </insert>
+
+    <update id="update" parameterType="com.example.sbpathvariable.domain.Member">
+        UPDATE member
+        SET name = #{name},
+            email = #{email}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM member WHERE id = #{id}
+    </delete>
+</mapper> 
