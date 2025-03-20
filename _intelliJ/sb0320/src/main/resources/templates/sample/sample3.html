@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>sample2 페이지</h1>
+<ul>
+    <li th:each="dto : ${list}" >
+        <p th:text="${dto}">연습</p>  <!-- 연습이라는 문자가 씹힘 -->
+    </li>
+</ul>
+</body>
+</html>

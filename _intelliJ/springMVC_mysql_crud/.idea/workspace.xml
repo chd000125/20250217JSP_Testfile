@@ -5,39 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a35d3b47-de74-4175-b7e1-8c6468f2abab" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/webapp/WEB-INF/view/hello.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demo/src/main/webapp/WEB-INF/view/main.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sb_jdbctemplate_mysql_crud/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Servers/Tomcat v9.0 Server at localhost-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Servers/Tomcat v9.0 Server at localhost-config/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sp5-chap09/src/main/java/chap09/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/package/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../sp5-chap09/src/main/java/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/demo/package/MvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../../springMVC/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../../springMVC/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/.jsdtscope" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/org.eclipse.wst.common.component" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/java/com/example/config/DatabaseConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/java/com/example/config/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/java/com/example/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/java/com/example/controller/TaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/java/com/example/model/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/java/com/example/repository/TaskRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/java/com/example/service/TaskService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/webapp/WEB-INF/views/task/form.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/webapp/WEB-INF/views/task/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../springMVC_mysql_crud/src/main/webapp/resources/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sb_jdbctemplate_mysql_crud/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../sb_jdbctemplate_mysql_crud/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sb_jdbctemplate_mysql_crud/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../sb_jdbctemplate_mysql_crud/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sb_jpa1/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sb_jpa1/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sb_jpa1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sb_jpa1/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sb_jpa1/.idea/sb_jpa1.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +32,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/gukbi_chd/gukbi/_intelliJ/sb_jdbctemplate_mysql_crud",
+    "last_opened_file_path": "C:/gukbi_chd/gukbi/_intelliJ/demo0318",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -83,6 +55,7 @@
       <updated>1741758058718</updated>
       <workItem from="1741758059794" duration="40000" />
       <workItem from="1741758104777" duration="75000" />
+      <workItem from="1742454433176" duration="29000" />
     </task>
     <servers />
   </component>
