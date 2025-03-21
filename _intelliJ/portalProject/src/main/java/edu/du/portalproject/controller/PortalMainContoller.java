@@ -10,13 +10,4 @@ public class PortalMainContoller {
     public String index() {
         return "portalMain/home";
     }
-    @GetMapping("/login")
-    public String login() {
-        return "portalMain/login";
-    }
-    @GetMapping
-    public String Register() {
-        return "portalMain/register";
-    }
-
 }
