@@ -1,7 +1,8 @@
 package com.example.module2.mapper;
 
 import com.example.module2.model.Board;
-import org.apache.ibatis.annotations.*;
+
+
 
 import java.util.List;
 

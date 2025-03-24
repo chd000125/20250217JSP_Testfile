@@ -17,14 +17,20 @@
     <a class="navbar-brand" href="/">포털사이트</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item" th:if="${session.user == null}">
-          <a class="nav-link" th:href="@{/login}">로그인</a>
+        <li class="nav-item" th:if="${session.account == null}">
+          <a class="nav-link" th:href="@{/account/login}">로그인</a>
         </li>
-        <li class="nav-item" th:if="${session.user == null}">
-          <a class="nav-link" th:href="@{/register}">회원가입</a>
+        <li class="nav-item" th:if="${session.account == null}">
+          <a class="nav-link" th:href="@{/account/register}">회원가입</a>
         </li>
-        <li class="nav-item" th:if="${session.user != null}">
-          <a class="nav-link" th:href="@{/logout}">로그아웃</a>
+        <li class="nav-item" th:if="${session.account !=null}">
+          <a class="nav-link" th:href="@{/board/list}">게시판</a>
+        </li>
+        <li class="nav-item" th:if="${session.account !=null}">
+          <a class="nav-link" th:href="@{/account/accountInfo}">[[${session.account.name}]]</a>
+        </li>
+        <li class="nav-item" th:if="${session.account != null}">
+          <a class="nav-link" th:href="@{/account/logout}">로그아웃</a>
         </li>
       </ul>
     </div>
@@ -32,8 +38,5 @@
 </nav>
 
 <!-- 게시판을 iframe으로 로드 -->
-<div class="container">
-  <iframe src="/board" id="boardFrame"></iframe>
-</div>
 </body>
 </html>

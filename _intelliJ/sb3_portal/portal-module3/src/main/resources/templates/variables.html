@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타임리프 변수 예제</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>타임리프 변수 사용 예제</h2>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">기본 변수 출력</h5>
+                <p>이름: <span th:text="${name}">홍길동</span></p>
+                <p>나이: <span th:text="${age}">25</span></p>
+                <p>학생 여부: <span th:text="${isStudent}">true</span></p>
+            </div>
+        </div>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">다른 방식의 변수 출력</h5>
+                <p>이름: <span th:text="'이름: ' + ${name}">이름: 홍길동</span></p>
+                <p>나이: <span th:text="'나이: ' + ${age}">나이: 25</span></p>
+            </div>
+        </div>
+        <a href="/" class="btn btn-primary mt-3">홈으로 돌아가기</a>
+    </div>
+</body>
+</html> 
