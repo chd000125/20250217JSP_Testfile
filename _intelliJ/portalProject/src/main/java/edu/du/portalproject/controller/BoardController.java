@@ -64,7 +64,7 @@ public class BoardController {
             post.setCreatedAt(LocalDateTime.now());
 
             boardService.savePost(post);
-            return "portalBoard/boardList";
+            return "redirect:/board/list";
         }
         catch(Exception e){
             model.addAttribute("error", "글쓰기 실패: " + e.getMessage());
@@ -77,7 +77,7 @@ public class BoardController {
     public String editPost(@PathVariable Long id, HttpSession session, Model model, RedirectAttributes redirectAttributes) {
         Account account = (Account) session.getAttribute("account");
         if (account == null) {
-            return "redirect:/login";
+            return "redirect:/account/login";
         }
 
         Board post = boardService.getPostById(id);
@@ -95,20 +95,20 @@ public class BoardController {
     public String updatePost(@PathVariable Long id, @RequestParam String title, @RequestParam String content, HttpSession session, RedirectAttributes redirectAttributes) {
         Account account = (Account) session.getAttribute("account");
         if (account == null) {
-            return "redirect:/login";
+            return "redirect:/account/login";
         }
 
         Board post = boardService.getPostById(id);
         if (post == null || !post.getUserName().equals(account.getName())) {
             redirectAttributes.addFlashAttribute("message", "본인만 수정할 수 있습니다.");
-            return "redirect:/board";
+            return "redirect:/board/list";
         }
 
         post.setTitle(title);
         post.setContent(content);
         boardService.updatePost(post);
 
-        return "redirect:/board";
+        return "portalBoard/boardEdit";
     }
 
     // ✅ 게시글 삭제 (본인만 가능)
@@ -122,11 +122,11 @@ public class BoardController {
         Board post = boardService.getPostById(id);
         if (post == null || !post.getUserName().equals(account.getName())) {
             redirectAttributes.addFlashAttribute("message", "본인만 삭제할 수 있습니다.");
-            return "redirect:/board";
+            return "redirect:/board/list";
         }
 
         boardService.deletePost(id);
-        return "redirect:/board";
+        return "redirect:/board/list";
     }
 
 

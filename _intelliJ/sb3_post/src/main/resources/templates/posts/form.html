@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <th:block layout:fragment="head">
+        <style>
+            .form-control:focus {
+                border-color: #0d6efd;
+                box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+            }
+            .form-label {
+                font-weight: 500;
+                color: #495057;
+                margin-bottom: 0.5rem;
+            }
+            textarea.form-control {
+                min-height: 300px;
+                resize: vertical;
+            }
+            .btn-group {
+                gap: 0.5rem;
+            }
+            .btn-secondary {
+                background: #6c757d;
+                border: none;
+                transition: all 0.3s ease;
+            }
+            .btn-secondary:hover {
+                background: #5a6268;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+            }
+        </style>
+    </th:block>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-edit me-2"></i>
+                    <span th:text="${post.id == null ? '새 게시글 작성' : '게시글 수정'}"></span>
+                </h3>
+            </div>
+            <div class="card-body">
+                <form th:action="${post.id == null ? '/posts/new' : '/posts/' + post.id + '/edit'}" 
+                      th:object="${post}" 
+                      method="post"
+                      class="needs-validation"
+                      novalidate>
+                    <div class="mb-4">
+                        <label for="title" class="form-label">제목</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="title" 
+                               th:field="*{title}" 
+                               placeholder="제목을 입력하세요"
+                               required>
+                        <div class="invalid-feedback">
+                            제목을 입력해주세요.
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="author" class="form-label">작성자</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="author" 
+                               th:field="*{author}"
+                               placeholder="작성자명을 입력하세요" 
+                               required>
+                        <div class="invalid-feedback">
+                            작성자를 입력해주세요.
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="content" class="form-label">내용</label>
+                        <textarea class="form-control" 
+                                  id="content" 
+                                  th:field="*{content}" 
+                                  placeholder="내용을 입력하세요"
+                                  required></textarea>
+                        <div class="invalid-feedback">
+                            내용을 입력해주세요.
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end btn-group">
+                        <a href="/posts" class="btn btn-secondary">
+                            <i class="fas fa-times me-1"></i>취소
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-1"></i>저장
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <th:block layout:fragment="script">
+        <script>
+            // 폼 유효성 검사 활성화
+            (function () {
+                'use strict'
+                var forms = document.querySelectorAll('.needs-validation')
+                Array.prototype.slice.call(forms)
+                    .forEach(function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (!form.checkValidity()) {
+                                event.preventDefault()
+                                event.stopPropagation()
+                            }
+                            form.classList.add('was-validated')
+                        }, false)
+                    })
+            })()
+        </script>
+    </th:block>
+</body>
+</html> 

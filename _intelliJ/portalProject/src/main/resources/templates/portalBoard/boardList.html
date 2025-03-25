@@ -21,6 +21,7 @@
 <!-- 로그인한 사용자만 글쓰기 가능 -->
 <div th:if="${session.account != null}">
     <a th:href="@{/board/write}" class="btn">글쓰기</a>
+    <a th:href="@{/}" class="btn">메인으로</a>
 </div>
 
 <table>
@@ -30,7 +31,6 @@
         <th>제목</th>
         <th>작성자</th>
         <th>작성일</th>
-        <th>수정/삭제</th>
     </tr>
     </thead>
     <tbody>
@@ -39,14 +39,6 @@
         <td><a th:href="@{/board/list/{id}(id=${post.id})}" th:text="${post.title}"></a></td>
         <td th:text="${post.userName}"></td>
         <td th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd')}"></td>
-        <td>
-                <span th:if="${session.account != null and session.account.name == post.userName}">
-                    <a th:href="@{/board/edit/{id}(id=${post.id})}" class="btn edit-btn">수정</a>
-                    <form th:action="@{/board/delete/{id}(id=${post.id})}" method="post" style="display:inline;">
-                        <button type="submit" class="btn delete-btn">삭제</button>
-                    </form>
-                </span>
-        </td>
     </tr>
     </tbody>
 </table>
