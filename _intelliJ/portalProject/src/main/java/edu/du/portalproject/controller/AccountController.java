@@ -45,10 +45,12 @@ public class AccountController {
 
     // ✅ 로그인 처리
     @PostMapping("/login")
-    public String login(@RequestParam String email,
-                        @RequestParam String password,
+    public String login(@RequestParam(value="email") String email,
+                        @RequestParam(value="password") String password,
                         HttpSession session,
                         Model model) {
+        System.out.println("email: " + email);
+        System.out.println("password: " + password);
         Account account = accountService.login(email, password);
         if (account != null) {
             session.setAttribute("account", account); // 세션에 사용자 정보 저장
