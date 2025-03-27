@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MSA Demo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">MSA Demo</a>
+        <div style="float: right;">
+            <a href="/products" class="btn btn-primary" style="margin-right: 1rem;">상품 관리</a>
+            <a href="/orders" class="btn btn-primary">주문 관리</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>MSA 데모 프로젝트에 오신 것을 환영합니다</h1>
+            <p>이 프로젝트는 다음 서비스들로 구성되어 있습니다:</p>
+            <ul>
+                <li>Gateway Service (포트: 8000)</li>
+                <li>Eureka Server (포트: 8761)</li>
+                <li>Product Service (포트: 8001)</li>
+                <li>Order Service (포트: 8002)</li>
+            </ul>
+            <p>위의 네비게이션 바를 사용하여 각 서비스의 기능을 테스트해보세요.</p>
+        </div>
+    </div>
+</body>
+</html> 
